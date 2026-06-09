@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venda de Ingressos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* COLOQUE O CÓDIGO DE AJUSTE AQUI DENTRO */
+
+        /* Força esconder slides inativos */
+        .carousel-item {
+            display: none;
+        }
+
+        .carousel-item.active {
+            display: block;
+        }
+
+        /* Melhora a visibilidade do texto */
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.6);
+            /* Fundo escuro atrás do texto */
+            border-radius: 10px;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        style="background-color: #0a0015; border-bottom: 1px solid #2d0060;">
+        <div class="container">
+
+            <!-- Nome/Logo -->
+            <a class="navbar-brand fw-bold" href="#" style="color: #c084fc; letter-spacing: 2px;">
+                🎵 SHOWTICKETS
+            </a>
+
+            <!-- Botão hamburguer para celular -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links do menu -->
+            <div class="collapse navbar-collapse" id="menuNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">🏠 Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ingressos">🎟️ Ingressos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#accordionEvento">ℹ️ Informações</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contato">📞 Contato</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <!-- =================== FIM NAVBAR =================== -->
+
+    <div class="container mt-5">
+        <!-- CABEÇALHO COM BADGES -->
+        <div class="text-center mb-5">
+            <h1>🎸 Rock in Brasil 2025</h1>
+            <p>📍 Estádio Nacional · 15 de Agosto de 2025</p>
+            <span class="badge bg-success rounded-pill me-2">✅ Ingressos Disponíveis</span>
+            <span class="badge bg-danger rounded-pill me-2">🔴 Pista Premium Esgotando</span>
+            <span class="badge bg-warning text-dark rounded-pill">🎤 3 Atrações Confirmadas</span>
+        </div>
+
+        <!-- CARDS DE INGRESSOS -->
+        <h2 class="mb-4">🎟️ Tipos de Ingressos</h2>
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <h5>
+                        Pista Comum <span class="badge bg-secondary">Econômico</span>
+                    </h5>
+                    <p class="fs-4 fw-bold">R$ 120,00</p>
+                    <span class="badge bg-success rounded-pill">🟢 Disponível</span>
+                    <br /><br />
+                    <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-title="Pista Comum"
+                        data-bs-content="Acesso à área geral. Ingresso não é transferível após a compra.">
+                        Comprar
+                    </a>
+
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <h5>
+                        Pista Premium <span class="badge bg-danger">Quase Esgotado</span>
+                    </h5>
+                    <p class="fs-4 fw-bold">R$ 250,00</p>
+                    <span class="badge bg-warning text-dark rounded-pill">⚠️ Últimas Unidades</span>
+                    <br /><br />
+                    <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-title="Pista Premium"
+                        data-bs-content="Área próxima ao palco. Restam poucas unidades! Garanta já o seu.">
+                        Comprar
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-center p-3">
+                    <h5>
+                        Camarote VIP
+                        <span class="badge bg-warning text-dark">⭐ VIP</span>
+                    </h5>
+                    <p class="fs-4 fw-bold">R$ 600,00</p>
+                    <span class="badge bg-success rounded-pill">🟢 Disponível</span>
+                    <br /><br />
+                    <a href="#" class="btn btn-outline-light btn-sm" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-title="Camarote VIP"
+                        data-bs-content="Inclui open bar e meet & greet com os artistas. Experiência exclusiva!">
+                        Comprar
+                    </a>
+                </div>
+                <!-- ===================== CAROUSEL ===================== -->
+                <section class="mb-5">
+                    <h2 class="section-title">📸 Galeria do Evento</h2>
+
+                    <div id="carouselShow" class="carousel slide rounded" data-bs-ride="carousel">
+
+                        <!-- Bolinhas de navegação -->
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselShow" data-bs-slide-to="0" class="active"
+                                aria-current="true"></button>
+                            <button type="button" data-bs-target="#carouselShow" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#carouselShow" data-bs-slide-to="2"></button>
+                        </div>
+
+                        <!-- Slides -->
+                        <div class="carousel-inner rounded">
+
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <img src="https://placehold.co/1200x400/8b00ff/ffffff?text=Rock+in+Brasil+2025"
+                                    class="d-block w-100" alt="Show principal">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Rock in Brasil 2025</h5>
+                                    <p>A maior festa do rock do país!</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <img src="https://placehold.co/1200x400/4b0082/ffffff?text=Banda+Trovao+-+Headliner"
+                                    class="d-block w-100" alt="Banda Trovão">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Banda Trovão</h5>
+                                    <p>Headliner da noite — 22h00</p>
+                                </div>
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <img src="https://placehold.co/1200x400/1a0033/ffffff?text=Camarote+VIP+Exclusivo"
+                                    class="d-block w-100" alt="Camarote VIP">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Camarote VIP</h5>
+                                    <p>Open bar e meet & greet com os artistas</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Seta anterior -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselShow"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+
+                        <!-- Seta próximo -->
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselShow"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+
+                    </div>
+                </section>
+            </div>
+
+            <!-- ==================== CARD GROUP ==================== -->
+            <section class="mb-5">
+                <h2 class="section-title">🎤 Atrações do Show</h2>
+
+                <div class="card-group">
+                    <!-- Card 1 -->
+                    <div class="card text-center">
+                        <img src="https://placehold.co/400x200/1a0033/c084fc?text=Voz+do+Asfalto" class="card-img-top"
+                            alt="Voz do Asfalto" />
+                        <div class="card-body">
+                            <h5 class="card-title">Voz do Asfalto</h5>
+                            <p class="card-text">
+                                A banda de abertura que vai esquentar o público para a noite
+                                épica.
+                            </p>
+                            <span class="badge bg-secondary">Abertura</span>
+                        </div>
+                        <div class="card-footer text-muted">🕕 18h30</div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card text-center">
+                        <img src="https://placehold.co/400x200/2d0060/e0aaff?text=Os+Relampagos" class="card-img-top"
+                            alt="Os Relâmpagos" />
+                        <div class="card-body">
+                            <h5 class="card-title">Os Relâmpagos</h5>
+                            <p class="card-text">
+                                Convidados especiais com os maiores hits do rock nacional dos
+                                anos 90.
+                            </p>
+                            <span class="badge bg-info text-dark">Convidado</span>
+                        </div>
+                        <div class="card-footer text-muted">🕗 20h00</div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="card text-center">
+                        <img src="https://placehold.co/400x200/4b0082/ffffff?text=Banda+Trovao" class="card-img-top"
+                            alt="Banda Trovão" />
+                        <div class="card-body">
+                            <h5 class="card-title">Banda Trovão</h5>
+                            <p class="card-text">
+                                O headliner da noite! Prepare-se para o show mais esperado do
+                                ano.
+                            </p>
+                            <span class="badge bg-warning text-dark">⭐ Headliner</span>
+                        </div>
+                        <div class="card-footer text-muted">🕙 22h00</div>
+                    </div>
+                </div>
+            </section>
+            <!-- ================== FIM CARD GROUP ================== -->
+
+            <!-- ACCORDION -->
+            <h2 class="mb-4">ℹ️ Informações do Evento</h2>
+            <div class="accordion mb-5" id="accordionEvento">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#atracoes">
+                            🎸 Atrações Confirmadas
+                            <span class="badge bg-info text-dark ms-2">3 Bandas</span>
+                        </button>
+                    </h2>
+                    <div id="atracoes" class="accordion-collapse collapse show" data-bs-parent="#accordionEvento">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>
+                                    🎤 <strong>Banda Trovão</strong> — 22h00
+                                    <span class="badge bg-warning text-dark ms-1">Headliner</span>
+                                </li>
+                                <li>
+                                    🎸 <strong>Os Relâmpagos</strong> — 20h00
+                                    <span class="badge bg-secondary ms-1">Convidado</span>
+                                </li>
+                                <li>
+                                    🥁 <strong>Voz do Asfalto</strong> — 18h30
+                                    <span class="badge bg-secondary ms-1">Abertura</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#local">
+                            📍 Local e Acesso
+                        </button>
+                    </h2>
+                    <div id="local" class="accordion-collapse collapse" data-bs-parent="#accordionEvento">
+                        <div class="accordion-body">
+                            <p>
+                                <strong>Endereço:</strong> Estádio Nacional, Av. das Nações,
+                                1000
+                            </p>
+                            <p><strong>Portões abrem:</strong> 18h00</p>
+                            <p><strong>Estacionamento:</strong> Disponível (R$ 30,00)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#regras">
+                            📋 Regras do Evento
+                            <span class="badge bg-danger ms-2">Importante</span>
+                        </button>
+                    </h2>
+                    <div id="regras" class="accordion-collapse collapse" data-bs-parent="#accordionEvento">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>❌ Proibido menores de 16 anos desacompanhados</li>
+                                <li>❌ Não é permitido trazer alimentos de fora</li>
+                                <li>✅ Área especial para cadeirantes disponível</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faq">
+                            ❓ Perguntas Frequentes
+                        </button>
+                    </h2>
+                    <div id="faq" class="accordion-collapse collapse" data-bs-parent="#accordionEvento">
+                        <div class="accordion-body">
+                            <p>
+                                <strong>Como recebo meu ingresso?</strong><br />Por e-mail em
+                                PDF com QR Code.
+                            </p>
+                            <p>
+                                <strong>Há meia-entrada?</strong><br />Sim! Estudantes e idosos
+                                mediante documento.
+                            </p>
+                            <p>
+                                <strong>Posso transferir meu ingresso?</strong><br />Sim, até
+                                48h antes do evento.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'));
+                popoverTriggerList.map(function (popoverTriggerEl) {
+                    return new bootstrap.Popover(popoverTriggerEl);
+                });
+            });
+        </script>
+
+</body>
+
+</html>
